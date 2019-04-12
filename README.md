@@ -92,6 +92,8 @@ Steps:
 2. Embed the following link into a WP post: 
 
 [embed src='http://youtube.com/embed/12345\x3csvg onload=alert(1)\x3e'][/embed]
+
+
 3. View post to get XSS.
 
 Vulnerability Type: Cross Site Scripting (XSS)
