@@ -6,7 +6,8 @@ Authenticated Stored Cross-Site Scripting via Image Filename
 Steps:
 1. Intro -The XSS code can be inserted as a crafted filename of any post attachment. This post when viewed can cause malicious actions to occur on the viewers computer.
 2. The file name given to the image to be used here is:
-<img src=a onerror=alert(document.cookie)>.jpg
+
+"<img src=a onerror=alert(document.cookie)>.jpg"
 3. The image is uploaded in a post as an attachment file.
 4. When the post is viewed an alert pops up on the viewers screen.
 
