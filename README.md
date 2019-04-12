@@ -51,5 +51,44 @@ References:
 https://wpvulndb.com/vulnerabilities/7945
 http://klikki.fi/adv/wordpress2.html
 
-
+![](comment_xss.gif)
     
+## Vulnerability 3:
+Authenticated Shortcode Tags Cross-Site Scripting
+
+Steps:
+1. Intro - Shortcode tags can be mixed with HTML to lead to malformed HTML, bypassing KSES validation and opening up XSS. Can lead to persistant XSS.
+
+2. Enter the following code ina WP post:
+TEST!!![caption width="1" caption='<a href="' ">]</a><a href="http://onMouseOver='alert(1)'">Click me</a>
+
+3. View post to get XSS.
+
+Vulnerability Type: Cross Site Scripting (XSS)
+
+Affected Versions: 4.2
+
+Fixed in version: 4.2.5
+
+References: 
+http://blog.knownsec.com/2015/09/wordpress-vulnerability-analysis-cve-2015-5714-cve-2015-5715/
+https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5714
+
+![](authenticated_shortcode_tage_xss.gif)
+
+## Vulnerability 4:
+Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
+
+Steps:
+1. Intro - A stored XSS vulnerability in YouTube Embed 3.3.2 (and possibly earlier versions) allows admin users to compromise other admins and super admins. YouTube Embed is a WordPress plugin with over 30,000 active installs.
+2. Embed the following link into a WP post: 
+[embed src='http://youtube.com/embed/12345\x3csvg onload=alert(1)\x3e'][/embed]
+3. View post to get XSS.
+
+Vulnerability Type: Cross Site Scripting (XSS)
+
+Affected Versions: 4.2
+
+Fixed in version: 4.2.13
+
+![](youtube_embed_xss.gif)
