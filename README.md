@@ -91,4 +91,7 @@ Affected Versions: 4.2
 
 Fixed in version: 4.2.13
 
+References: https://blog.sucuri.net/2017/03/stored-xss-in-wordpress-core.html
+https://packetstormsecurity.com/files/133340/WordPress-YouTube-Embed-3.3.2-Cross-Site-Scripting.html
+
 ![](youtube_embed_xss.gif)
